@@ -145,7 +145,7 @@ public class App {
     public String convertInttoBinary(int x){
         return Integer.toBinaryString(x);
     }
-    
+
     public String convertInttoBinaryUsingRecurssion(int x){
         StringBuilder builder = new StringBuilder("");
         convertInttoBinaryUsingRecurssion(x,builder);
@@ -160,5 +160,37 @@ public class App {
             return;
         }
         convertInttoBinaryUsingRecurssion(div,output);
+    }
+
+    public int sumofArray(int[] nums){
+        int i=0;
+        for(int num:nums){
+            i+=num;
+        }
+        return i;
+    }
+
+    public int[] arrayRotationRight(int[] nums,int step){
+        int[] output=new int[nums.length];
+        int j=nums.length-step;
+        for(int i=0;i<nums.length && j<nums.length;i++){
+            output[i]=nums[j];
+            if(++j>=nums.length){
+                j=0;
+            }
+        }
+        return output;
+    }
+
+    public int[] arrayRotationLeft(int[] nums,int step){
+        int[] output=new int[nums.length];
+        int j=step;
+        for(int i=0;i<nums.length && j<nums.length;i++){
+            output[i]=nums[j];
+            if(++j>=nums.length){
+                j=0;
+            }
+        }
+        return output;
     }
 }

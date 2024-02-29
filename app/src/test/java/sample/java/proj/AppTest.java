@@ -132,4 +132,38 @@ class AppTest {
         assertEquals(expecOutput, actualOutput);
     }
 
+    @ParameterizedTest
+    @CsvSource({
+        "1|2|3|4|5,15",
+        "1|2|3|4|5|-6,9"
+    })
+    void testSumofArray(String input,int expecOutput){
+        int actualOutput = buildClassUnderTest().sumofArray(buildIntArr(input));
+        assertEquals(expecOutput, actualOutput);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "1|2|3|4|5,1,5|1|2|3|4",
+        "1|2|3|4|5,2,4|5|1|2|3",
+        "1|2|3|4|5,3,3|4|5|1|2",
+        "1|2|3|4|5,4,2|3|4|5|1"
+    })
+    void testArrayRotationRight(String input,int step,String expecOutput){
+        int[] actualOutput = buildClassUnderTest().arrayRotationRight(buildIntArr(input), step);
+        assertThat(actualOutput).isEqualTo(buildIntArr(expecOutput));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "1|2|3|4|5,1,2|3|4|5|1",
+        "1|2|3|4|5,2,3|4|5|1|2",
+        "1|2|3|4|5,3,4|5|1|2|3",
+        "1|2|3|4|5,4,5|1|2|3|4"
+    })
+    void testArrayRotationLeft(String input,int step,String expecOutput){
+        int[] actualOutput = buildClassUnderTest().arrayRotationLeft(buildIntArr(input), step);
+        assertThat(actualOutput).isEqualTo(buildIntArr(expecOutput));
+    }
+
 }
