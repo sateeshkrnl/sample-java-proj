@@ -1,0 +1,7 @@
+{
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.runtimes": [],
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.gradle.java.home": "C:\\Program Files\\Java\\jdk-11.0.8",
+  "java.import.gradle.wrapper.enabled": true
+}
