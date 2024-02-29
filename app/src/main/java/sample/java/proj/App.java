@@ -141,4 +141,24 @@ public class App {
         } 
         return x.multiply(factorialusingRecursion(x.subtract(BigInteger.valueOf(1))));
     }
+
+    public String convertInttoBinary(int x){
+        return Integer.toBinaryString(x);
+    }
+    
+    public String convertInttoBinaryUsingRecurssion(int x){
+        StringBuilder builder = new StringBuilder("");
+        convertInttoBinaryUsingRecurssion(x,builder);
+        return builder.reverse().toString();
+    }
+
+    private void convertInttoBinaryUsingRecurssion(int x,StringBuilder output){
+        int div = x/2;        
+        int mod = x%2;
+        output.append(Integer.toString(mod));
+        if(div==0){
+            return;
+        }
+        convertInttoBinaryUsingRecurssion(div,output);
+    }
 }

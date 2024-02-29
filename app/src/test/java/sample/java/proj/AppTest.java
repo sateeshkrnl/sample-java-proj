@@ -109,4 +109,27 @@ class AppTest {
         BigInteger output = buildClassUnderTest().factorialusingRecursion(BigInteger.valueOf(input));
         assertEquals(expecFactorial, output);
     }
+
+    @ParameterizedTest
+    @CsvSource({
+        "1,1",
+        "2,10",
+        "3,11"
+    })
+    void testConvertIntToBinary(int input,String expecOutput){
+        String actualOutput = buildClassUnderTest().convertInttoBinary(input);
+        assertEquals(expecOutput, actualOutput);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "1,1",
+        "2,10",
+        "3,11"
+    })
+    void testConvertIntToBinaryUsingRecursion(int input,String expecOutput){
+        String actualOutput = buildClassUnderTest().convertInttoBinaryUsingRecurssion(input);
+        assertEquals(expecOutput, actualOutput);
+    }
+
 }
